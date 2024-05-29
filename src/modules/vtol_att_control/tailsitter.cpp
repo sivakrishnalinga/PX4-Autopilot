@@ -358,6 +358,7 @@ bool Tailsitter::isFrontTransitionCompletedBase()
 
 void Tailsitter::blendThrottleAfterFrontTransition(float scale)
 {
+	// note: MC throttle is negative (as in negative z), while FW throttle is positive (positive x)
 	_v_att_sp->thrust_body[0] = scale * _v_att_sp->thrust_body[0] + (1.f - scale) * (-_last_thr_in_mc);
 }
 
